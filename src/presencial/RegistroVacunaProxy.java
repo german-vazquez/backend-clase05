@@ -20,7 +20,7 @@ public class RegistroVacunaProxy implements Registro {
 
     @Override
     public String vacunar(Persona persona) {
-        if (persona.getFechaAsignada().isAfter(LocalDate.now())) {
+        if (persona.getFechaAsignada().isBefore(LocalDate.now())||LocalDate.now().isEqual(persona.getFechaAsignada())) {
             //alternativa B
             //centroDeVacunación = new RegistroVacuna()
 
